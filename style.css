@@ -1,58 +1,158 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* 폰트 추가 */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Varela+Round&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a, a:link, a:visited{
-    color: inherit;
-    text-decoration: none;
+a,
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: none;
 }
 
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
 
-.container{
-    width: 1140px;
-    margin: 0 auto;
+.container {
+  width: 1140px;
+  margin: 0 auto;
 }
 
-header{
-    position: absolute;
-    color: black;
-    top: 0;
-    /* 항상 위에 보이도록 */
-    z-index: 1;
-    width: 100%;
-    padding: 1rem;
+header {
+  position: absolute;
+  color: black;
+  top: 0;
+  /* 항상 위에 보이도록 */
+  z-index: 1;
+  width: 100%;
+  padding: 1rem;
 }
 
-header .container{
-    display: flex;
-    /* 요소들 사이에 동일한 간격 주기 */
-    justify-content: space-between; 
-    align-items: center;
-    width: 100%;
+header .container {
+  display: flex;
+  /* 요소들 사이에 동일한 간격 주기 */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-header nav ul{
-    display: flex;
+header nav ul {
+  display: flex;
 }
-header nav ul li{
-    padding: 10px;
+header nav ul li {
+  padding: 10px;
 }
-header button{
-    /* 배경색 없애기*/
-    background: transparent;
-    border:0;
-    /*커서 갖다대면 포인터모양*/
-    cursor: pointer; 
+header button {
+  /* 배경색 없애기*/
+  background: transparent;
+  border: 0;
+  /*커서 갖다대면 포인터모양*/
+  cursor: pointer;
 }
-header h1 button{
-    font-size: 2rem;
-    font-weight: bold;
+header h1 button {
+  font-size: 2rem;
+  font-weight: bold;
 }
-header nav ul li button{
-    font-size: 1.2rem;
+header nav ul li button {
+  font-size: 1.2rem;
+}
+
+main {
+  /* 꽉차도록 */
+  width: 100%;
+  height: 100vh;
+  color: white;
+  /* linear-gradient : 배경색이 이미지를 덮는 효과 */
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("images/me.jpg") center center;
+  background-size: cover;
+  /* 수직방향 중앙으로 정렬할수있게 플렉스 선언 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+main h4 {
+  font-size: 2rem;
+}
+main h2 {
+  font-size: 3.5rem;
+  margin: 2rem 0;
+  letter-spacing: 3px;
+}
+main p {
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 1.25rem;
+}
+
+/* 다운로드 버튼 */
+main button.download {
+  /* 배경 투명하게 */
+  background-color: transparent;
+  border: 3px solid white;
+  /* 둥근 정도 */
+  border-radius: 20px;
+  padding: 1rem 2rem;
+  margin-top: 3rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 마우스 모양 애니메이션 버튼 */
+main button.mouse {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  /* 글자가 정중앙에 올수 있도록 설정 */
+  transform: translateX(-50%);
+  /* upDown이라는 애니메이션 한바퀴 지속시간, 진행속도, 무한하게 지속하는 설정 */
+  animation: upDown 1s ease-in-out infinite;
+  cursor: pointer;
+}
+@keyframes upDown {
+  0% {
+    bottom: 1rem;
+  }
+  50% {
+    bottom: 1.5rem;
+  }
+  100% {
+    bottom: 1rem;
+  }
+}
+
+/* 텍스트 끝에 커서가 깜빡이는 설정 */
+main h2 span::after {
+  content: "";
+  height: 40px;
+  width: 3px;
+  background-color: #fff;
+  display: inline-block;
+  animation: blink 0.7s ease-in-out infinite;
+}
+/* 깜빡이는 애니메이션 설정 */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 새로운 폰트 적용 */
+main h2 {
+  letter-spacing: 3px;
+  font-family: "Varela Round", sans-serif;
 }
