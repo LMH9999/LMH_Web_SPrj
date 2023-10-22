@@ -1,158 +1,552 @@
 /* 폰트 추가 */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Varela+Round&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Varela+Round&display=swap');
+/* header.css */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
-
-a,
-a:link,
-a:visited {
-  color: inherit;
-  text-decoration: none;
+a, a:link, a:visited{
+  color:inherit;
+  text-decoration:none;
 }
-
-li {
-  list-style: none;
+li{
+  list-style:none;
 }
-
-.container {
-  width: 1140px;
-  margin: 0 auto;
+.container{
+  width:1140px;
+  margin:0 auto;
 }
-
-header {
-  position: absolute;
-  color: black;
-  top: 0;
-  /* 항상 위에 보이도록 */
-  z-index: 1;
-  width: 100%;
-  padding: 1rem;
+header{
+  /* 스크롤을 내려도 고정된 위치에 보이도록 */
+  position:fixed;
+  color:white;
+  top:0;
+  /* 어떤 컨텐츠보다 항상 위에 보이도록 z-index 설정 */
+  z-index:1;
+  width:100%;
+  padding:1rem;
 }
-
-header .container {
-  display: flex;
+header .container{
+  display:flex;
   /* 요소들 사이에 동일한 간격 주기 */
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  justify-content:space-between;
+  align-items:center;
+  width:100%;
 }
-
-header nav ul {
-  display: flex;
+header nav ul{
+  display:flex;
 }
-header nav ul li {
-  padding: 10px;
+header nav ul li{
+  padding:10px;
 }
-header button {
-  /* 배경색 없애기*/
+header button{
+  /* 배경색 없애기 */
   background: transparent;
-  border: 0;
-  /*커서 갖다대면 포인터모양*/
+  border:0;
+  /* 커서 올렸을 때 포인터 모양 */
   cursor: pointer;
+  color:white; 
 }
-header h1 button {
+header h1 button{
   font-size: 2rem;
   font-weight: bold;
 }
-header nav ul li button {
+header nav ul li button{
   font-size: 1.2rem;
 }
-
-main {
+/* End header.css */
+/* main.css */
+main{
   /* 꽉차도록 */
-  width: 100%;
-  height: 100vh;
-  color: white;
+  width:100%;
+  height:100vh;
+  color:white;
   /* linear-gradient : 배경색이 이미지를 덮는 효과 */
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("images/me.jpg") center center;
-  background-size: cover;
-  /* 수직방향 중앙으로 정렬할수있게 플렉스 선언 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  background:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/home1.jpg') center center;
+  background-size:cover;
+  /* 정렬을 위해 플렉스 선언 */
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
-
-main h4 {
-  font-size: 2rem;
+main h4{
+  font-size:2rem;
 }
-main h2 {
-  font-size: 3.5rem;
-  margin: 2rem 0;
-  letter-spacing: 3px;
+main h2{
+  font-size:3.5rem;
+  margin:2rem 0;
+  letter-spacing:3px;
+  font-family:'Varela Round', sans-serif; /* 웹 폰트 추가 */
 }
-main p {
-  max-width: 500px;
-  margin: 0 auto;
-  font-size: 1.25rem;
+main p{
+  max-width:500px;
+  margin:0 auto;
+  font-size:1.25rem;
 }
 
 /* 다운로드 버튼 */
-main button.download {
+main button.download{
   /* 배경 투명하게 */
-  background-color: transparent;
-  border: 3px solid white;
+  background-color:transparent;
+  border:3px solid white;
   /* 둥근 정도 */
-  border-radius: 20px;
-  padding: 1rem 2rem;
-  margin-top: 3rem;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
+  border-radius:20px;
+  padding:1rem 2rem;
+  margin-top:3rem;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
 }
 
 /* 마우스 모양 애니메이션 버튼 */
-main button.mouse {
-  background-color: transparent;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  /* 글자가 정중앙에 올수 있도록 설정 */
-  transform: translateX(-50%);
-  /* upDown이라는 애니메이션 한바퀴 지속시간, 진행속도, 무한하게 지속하는 설정 */
-  animation: upDown 1s ease-in-out infinite;
-  cursor: pointer;
+main button.mouse{
+  background-color:transparent;
+  border:none;
+  color:white;
+  font-size:2rem;
+  position:absolute;
+  bottom:1rem;
+  left:50%;
+  /* 글자가 정중앙에 올 수 있도록 설정 */
+  transform:translateX(-50%);
+  /* 애니메이션 지속시간, 진행속도, 반복 횟수 */
+  animation:upDown 1s ease-in-out infinite;
+  cursor:pointer;
 }
-@keyframes upDown {
-  0% {
-    bottom: 1rem;
+/* 버튼이 위아래로 흔들리는 모션 */
+@keyframes upDown{
+  0%{
+    bottom:1rem;
   }
-  50% {
-    bottom: 1.5rem;
+  50%{
+    bottom:1.5rem;
   }
-  100% {
-    bottom: 1rem;
+  100%{
+    bottom:1rem;
   }
 }
 
 /* 텍스트 끝에 커서가 깜빡이는 설정 */
-main h2 span::after {
-  content: "";
-  height: 40px;
-  width: 3px;
-  background-color: #fff;
-  display: inline-block;
-  animation: blink 0.7s ease-in-out infinite;
+main h2 span::after{
+  content:"";
+  height:40px;
+  width:3px;
+  background-color:#fff;
+  display:inline-block;
+  animation: blink .7s ease-in-out infinite;
 }
-/* 깜빡이는 애니메이션 설정 */
+/* 깜빡이는 애니메이션 */
 @keyframes blink {
-  0% {
+  0%{
+    /* 요소의 불투명도, 0에 가까울수록 투명함 */
     opacity: 1;
   }
-  100% {
+  100%{
     opacity: 0;
   }
 }
 
-/* 새로운 폰트 적용 */
-main h2 {
-  letter-spacing: 3px;
-  font-family: "Varela Round", sans-serif;
+/* about_me.css */
+section{
+  font-family:'Poppins', sans-serif;
+  /* 위아래 여백 */
+  padding:5rem 0;
+}
+/* 색션별 구분을 위해 짝수번째에 있는 섹션들은 배경색 다르게 */
+/* section:nth-child(2n){
+  background-color:#f8f8f8;
+} */
+section .title{
+  margin-bottom:3rem;
+}
+section .title h4{
+  font-size:1.35rem;
+  color:#ed4848;
+  position:relative;
+}
+section .title h2{
+  font-size:3.5rem; 
+}
+section .title p{
+  font-size:1.15rem;
+}
+/* float 속성 해제 */
+section .about-self::after{
+  content:"";
+  clear:both;
+  display:block;
+}
+/* 이미지가 본문 절반 차지하도록 설정 및 왼쪽으로 배치 */
+section .about-self .left{
+  width:50%;
+  float:left;
+}
+/* 이미지가 레프트 부분에 딱 맞도록 100% 설정 */
+section .about-self .left img{
+  max-width:100%;
+}
+/* 본문 내용이 절반 차지하도록 설정 및 오른쪽으로 배치 */
+section .about-self .right{
+  width:50%;
+  float:left;
+  padding:0 2rem;
+}
+/* 내용 부분의 강조 부분 설정(h3) */
+section .about-self .right h3{
+  font-size:2.25rem;
+  margin-bottom:1rem;
+}
+/* 내용 부분 안에서 strong태그인곳 빨간색으로 강조 */
+section .about-self .right h3 strong{
+  color:#ed4848;
+}
+/* 내용 부분의 일반적인 글자 크기 */
+section .about-self .right p{
+  font-size:1.15rem;
+  margin:1rem 0;
+}
+/* 소셜 아이콘들 크기와 여백 지정 */
+section .about-self .right .social a{
+  font-size:2.5rem;
+  margin-right:0.2rem;
+}
+/* End about_me.css */
+
+
+/* what_i_do.css */
+/* float 속성 해제*/
+section .do-me::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+/*내용 부분 사각형의 크기와 간격, 내부 여백 설정 */
+section .do-me .do-inner{
+  background-color:#fff;
+  width:30%;
+  padding:2rem; 
+  float:left;
+  margin-right:5%;
+  cursor:pointer;
+}
+/* 내용 부분 마지막 사각형의 외부 여백 설정 */
+section .do-me .do-inner:last-child{
+  margin-right:0;
+}
+/* 어썸폰트의 아이콘 폰트 크기와 색상 */
+section .do-me .do-inner .icon i{
+  font-size:2.5rem;
+  color:#ff6a6a;
+}
+/* 내용 부분의 제목 텍스트 크기와 간격 */
+section .do-me .do-inner .content h3{
+  font-size:2rem;
+  margin:1rem 0;
+}
+/* 내용 부분의 내용물 일반적인 텍스트 크기 */
+section .do-me .do-inner .content p{
+  font-size:1.15rem;
+}
+/* 내용 부분 사각형에 마우스를 올렸을 때 강조를 위해 그 사각형 배경,글자 색상 변경 */
+section .do-me .do-inner:hover{
+  background-color:lightcoral;
+  color:white;
+}
+/* 내용 부분 사각형에 마우스을 때 아이콘의 폰트 색상도 자연스럽도록 변경 */
+section .do-me .do-inner:hover i{
+  color:white;
+}
+/* End what_i_do.css */
+
+
+
+/* background.css */
+/* 섹션 중간 중간에 구분을 위한 뒷배경 설정 */
+.bg{
+  background:url('./images/bgimg3.jpg') center center;
+  background-size:cover;
+  /* 뒷배경은 스크롤을 내려도 고정된것처럼 자연스럽게 설정 */
+  background-attachment:fixed;
+  height:650px;
+}
+/* End background.css */
+
+
+/* portfolio.css */
+/* float 속성값 해제*/
+section.portfolio::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+/* 내용물 사각형 꾸미기 */
+section.portfolio .portfolio-inner{
+  width:30%;
+  margin-right:5%;
+  padding:1rem 1rem 1.5rem 1rem;
+  /* 왼쪽부터 시작하도록 */
+  float:left;
+  background-color:#f8f8f8;
+  border:1px solid #ccc;
+  margin-bottom:3rem;
+}
+/* 3번째마다 줄 바꿈을 위해 margin-right 0 적용 */
+section.portfolio .portfolio-inner:nth-child(3n){
+   margin-right:0;
+}
+/* 이미지의 크기가 부모 요소를 넘지 않도록 100%로 지정 */
+section.portfolio .portfolio-inner img{
+  width:100%;
+  display:block;
+}
+/* strong 태그 색상과 간격 */
+section.portfolio .portfolio-inner strong{
+  color:#ff6a6a;
+  margin:0.5rem 0;
+  display:block;
+}
+/* 내용 부분 폰트 크기 */
+section.portfolio .portfolio-inner h3{
+  font-size:1.75rem;
+}
+/* End portfolio.css */
+
+
+
+/* contact_with_me.css */
+/* float 속성 해제 */
+section.contact .contact-me::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+section.contact .contact-me .left{
+  width:30%;
+  float:left;
+}
+section.contact .contact-me .right{
+  float:left;
+  width:65%;
+  margin-left:5%;
+}
+/* 플렉스를 선언하고 세로 부분의 중앙정렬 */
+section.contact .contact-me .left .card{
+  border:1px solid #ccc;
+  padding:1rem;
+  display:flex;
+  align-items:center;
+  margin-bottom:1.25rem;
+}
+/* 아이콘 크기 및 간격 */
+section.contact .contact-me .left .card .icon i{
+  font-size:2rem;
+  margin-right:15px;
+}
+/* 오른쪽 폼의 외곽 설정 */
+section.contact .contact-me .right{ 
+  float:left;
+  width:65%;
+  margin-left:5%;
+  margin-bottom:2rem;
+  border:1px solid #ccc;
+  padding:1rem;
+}
+/* form-group 사이 간격 지정 */
+section.contact .contact-me .right .form-group{
+  margin-bottom:1.25rem;
+}
+/* label 태그가 인라인 성격이어서 외부 여백을 적용하기 위해 한 줄을 차지하는 block으로 변경 */
+section.contact .contact-me .right .form-group label{
+  display:block;
+  margin-bottom:0.85rem;
+}
+/* 오른쪽 폼 안의 입력하는 요소 꾸미기 */
+section.contact .contact-me .right .form-group input{
+  padding:0.625rem;
+  width:100%;
+  /* 윤곽선 없애기 */
+  outline:none;
+  /* 둥그스름한 윤곽선을 위해 border */
+  border:1px solid #ccc;
+  /* 꼭지점을 둥그스름하게 */
+  border-radius:10px;
+}
+/* 입력 부분을 눌러 커서가 활성화되면 파란색 테두리와 그림자 효과 추가 */ 
+section.contact .contact-me .right .form-group input:focus{
+  /* 테두리 색 변경 */
+  border:1px solid #719ECE;
+  /* 그림자효과 */
+  box-shadow:0 0 10px #719ECE;
+}
+/* textarea 꾸미기 */
+section.contact .contact-me .right .form-group textarea{
+  height:300px;
+  width:100%;
+  resize:none;
+  border:1px solid #ccc;
+  border-radius:10px;
+}
+/* textarea에 커서가 활성화되면 파란색 테두리와 그림자 효과 추가 */
+section.contact .contact-me .right .form-group textarea:focus{
+  outline:none;
+  border:1px solid #719ECE;
+  box-shadow:0 0 10px #719ECE;
+}
+/* 버튼 꾸미기 */
+section.contact .contact-me .right button{
+  width:100%;
+  padding:1rem;
+  background-color:#f78b00;
+  border:none;
+  color:white;
+}
+/* End contact_with_me.css */
+
+
+/* 반응형 코드 */
+/* media.css */
+@media screen and (max-width: 1140px){
+
+  /* 메인 container 기준 1140 -> 992px */
+  main .container{
+    width: 992px;
+  }
+  
+  /* 섹션 container 기준 1140 -> 600px */
+  section .container{
+    width:600px;
+  }
+
+  /* About me 영역 왼쪽을 너비를 50% -> 100% 변경 */
+  section .about-self .left{
+    width:100%;
+    margin-bottom: 1.5rem;
+  }
+  /* About me 영역 오른쪽 너비를 50% -> 100% 변경 */
+  section  .about-self .right{
+    width:100%;
+    padding:0;
+  }
+
+  /* What I Do 영역의 콘텐츠 박스의 너비를 30% -> 48% 변경 */
+  section .do-me .do-inner{
+    width:48%;
+    margin-bottom: 1.5rem;
+    margin-right: 0;
+  }
+
+  section .do-me .do-inner:nth-child(2n+1){
+    margin-right:4%; /* 1, 3, 5...번째 본문 사각형에 margin-right 4% 적용 */
+  }
+  
+  /* PortFolio 영역의 콘텐츠 박스 너비를 30% ->  48% 변경 */
+  section .portfolio-me .portfolio-inner{
+    width:48%;
+    margin-right: 0;
+  }
+
+  section .portfolio-me .portfolio-inner:nth-child(2n+1){
+    margin-right:4%;
+  }
+
+  /* Contact With Me 영역 */
+  section.contact .contact-me .left{
+    width:100%; /* 너비 변경 30% -> 100% */
+  }
+  
+  section.contact .contact-me .right{
+    width:100%;/* 너비 변경 65% -> 100% */
+    margin-left: 0; /* margin 초기화 */
+    
+  }
+}
+
+@media (max-width: 992px){
+  html{
+    font-size: 14px;
+  }
+
+  /* 메인 영역 container 기준 너비 변경 */
+  main .container{
+    width: 768px; /* 992px -> 768px */
+  }
+
+  /* PortFolio 영역 */
+  section .portfolio-me .portfolio-inner{
+    width:100%; /* 48% -> 100% 변경 */
+  } 
+}
+
+@media (max-width: 768px){
+  html{
+    font-size: 13px;
+  }
+  
+  /* 메인 영역 container 기준 너비 변경 */
+  main .container{
+    width: 576px; /* 768px -> 576px */
+  }
+
+  section .container{
+    width:400px; /* 600px -> 400px */
+  }
+
+  section .do-me .do-inner{
+    width:100%; /* 48% -> 100% */
+    margin-right: 0; /* margin 초기화 */
+  }
+}
+
+@media (max-width: 576px){
+  
+  html{
+    font-size: 12px;
+  }
+
+  main .container{
+    width: 400px; /* 576px -> 400px */
+  }
+
+  section .container{
+    width:360px; /* 400px -> 360px */
+  }
+}
+
+@media (max-width: 400px){
+  
+  html{
+    font-size: 11px;
+  }
+  main .container{
+    width: 320px;/* 400px -> 320px */
+  }
+
+  main h4{
+    font-size: 1.5rem;
+  }
+  section .container{
+    width: 320px;/* 360px -> 320px */
+  }
+  section .title h2{
+    font-size: 3rem; /* 3.5rem -> 3rem */
+  }
+}
+/* End media.css */
+
+/* 스크롤을 내려 배경색과 헤더 영역의 글자가 같아져 안보이는걸 방지하기 위해 스크롤을 내렸을때 헤더 영역 배경색 설정 */
+header.active{
+  background-color:rgba(0,0,0);
+  animation:fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn{
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
 }
