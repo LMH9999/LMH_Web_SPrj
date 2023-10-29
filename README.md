@@ -33,7 +33,7 @@
 
 ## 📝기능
 
-### 헤더
+### 1️⃣헤더
 
 <details><summary>
    상세보기
@@ -68,7 +68,7 @@ header{
 * 원하는 페이지로 이동하는 메뉴<br>
 * 스크롤을 내려도 고정된 위치<br><br>
 
-### 메인
+### 2️⃣메인
 
 <details><summary>
    상세보기
@@ -155,7 +155,7 @@ header{
 * 여러 문구가 타이핑되는 애니메이션 구현<br><br>
 
 
-### About , Features , Portfolio
+### 3️⃣About , Features , Portfolio
 
 <details><summary>
    상세보기
@@ -194,7 +194,7 @@ section .do-me .do-inner:hover i{
 * 특정 내용에 마우스를 올렸을 때 강조를 위해 색상 변경 (사진 2) <br><br>
 
 
-### Contact
+### 4️⃣Contact
 
 <details><summary>
    상세보기
@@ -220,7 +220,7 @@ section.contact .contact-me .right .form-group textarea:focus{
 * 양식에 마우스를 클릭해서 커서가 활성화 될 때 강조 표시<br><br>
 
 
-### 반응형 코드
+### 5️⃣반응형 코드
 
 <details><summary>
    상세보기
