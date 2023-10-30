@@ -8,7 +8,7 @@
 
 - **23.10.16** ~ **23.10.20** <br><br><br>
 
-### 🛠언어
+### 🛠기술 스택
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) 
 ![HTML](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) 
